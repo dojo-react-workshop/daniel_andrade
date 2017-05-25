@@ -3,15 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h2>Submitted Information</h2>
-	<ul>
-		<li>Name: <strong><%= data.name %></strong></li>
-		<li>Dojo Location: <strong><%= data.dojo_location %></strong></li>
-		<li>Favorite Language: <strong><%= data.favorite_language %></strong></li>
-		<li>Comment: <strong><%= data.comment %></strong></li>
-	</ul>
-	<a href="/"><h3>Back</h3></a>
+	<div id="wrapper">
+		<h2>Submitted Information</h2>
+		<ul>
+			<li>Name: <strong><%= data.name %></strong></li>
+			<li>Dojo Location: <strong><%= data.dojo_location %></strong></li>
+			<li>Favorite Language: <strong><%= data.favorite_language %></strong></li>
+			<li>Comment: <strong><%= data.comment %></strong></li>
+		</ul>
+		<a href="/"><button type="button">Back</button></a>
+	</div>
 </body>
 </html>
