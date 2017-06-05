@@ -1,52 +1,45 @@
- /*
-  Goal for these first 'easy' difficulty level assignments:
-  returns versus void returns
-*/
 
-function runningLogger(){
-  console.log("I am running");
-}
+// function runningLogger(){
+//   console.log("I am running");
+// }
+// runningLogger()
 
-function multiplyBy10(numb){
-  if (typeof(numb) == "number"){
-    return numb*10;
-  }
-}
+// function mutliplybyTen(num){
+//     return num*10;
+// }
+// console.log(mutliplybyTen(5))
 
-function stringReturnOne(){
-  return "cat";
-}
+// function stringReturnOne(){
+//   return "america!";
+// }
 
-function stringReturnTwo(){
-  return "dog";
-}
+// function stringReturnTwo(){
+//   return "chivas";
+// }
 
-function myFunctionRunner(param){
-  if (typeof(param)=='function'){
-    param();
-  }
-}
-// Somewhat interesting right?
-myFunctionRunner(stringReturnOne);
+// function caller(arg){
+//   if (typeof(arg)=='function'){
+//     arg();
+//   }
+// }
+// caller(5);
 
-function myDoubleConsoleLog(param1,param2){
-  if (typeof(param1) == 'function' && typeof(param2) == 'function'){
-    console.log(param1(), param2());
-  }
-}
-myDoubleConsoleLog(stringReturnOne, stringReturnTwo);
+// function caller(arg1, arg2){
+//   if (typeof(arg1)=='function' && typeof(arg2) == 'function'){
+//     console.log(arg1(), arg2());
+//   }
+// }
+// caller(5, 2);
 
-// more interesting, we hope!
 function caller2(param){
   console.log('starting');
   var x = setTimeout(function(){
     if (typeof(param)=='function'){
-      // notice the passed parameters...
-      param(stringReturnOne, stringReturnTwo);
+      param(thing1, thing2);
     }
   }, 2000);
   console.log('ending');
   return "interesting";
 }
 
-caller2(myDoubleConsoleLog);
+caller2(5);

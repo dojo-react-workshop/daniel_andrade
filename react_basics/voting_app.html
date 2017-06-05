@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Voting App!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="node_modules/react/dist/react.js"></script>
+        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+        <style media="screen">
+        .demo {
+            border: 1px solid #ccc;
+            margin: 1em;
+            padding: 1em;
+                }
+        </style>
+    </head>
+<body>
+            <div id="root"></div>
+
+        <script type="text/babel">
+            'use strict';
+            const languageVote = [
+                {
+                    text: 'React',
+                    count: 20
+                },
+                {
+                    text: 'Vue',
+                    count: 5
+                },
+                {
+                    text: 'Angular',
+                    count: 10
+                },
+                {
+                    text: 'Ember',
+                    count: 3
+                }
+            ]
+            const Container = (props) => {
+                const wrapper = {
+                    textAlign: 'center'
+                }
+                const languageVote = props.languageVote.map((RectangleData, idx) => {
+                    return <Rectangle key={idx} votingData={RectangleData}/>
+                })
+                return (
+                    <div>
+                        <h1 style={wrapper}>Vote Your JS Library!</h1>
+                        {languageVote}
+                    </div>
+                )
+                
+            }
+            const Rectangle = (props) => {
+                
+                const { votingData } = props;
+                const row = {
+                    height: '50px',
+                    width: '290px',
+                    display: 'block',
+                    border: 'thin solid black',
+                    margin: 'auto auto'
+                }
+                const rowElement = {
+                    width: '80px',
+                    height: '45px',
+                    verticalAlign: 'middle',
+                    textAlign: 'center',
+                    display: 'inline-block',
+                    padding: '3px',
+                    fontSize: '15px'
+                }
+                const voteCounter = {
+                    textAlign: 'center',
+                    border: '1px solid black',
+                    borderRadius: '50px',
+                    width: '30px',
+                    height: '30px',
+                    fontSize: '15px'
+                };
+                const voteTally = {
+                    border: 'none', 
+                    backgroundColor: 'white'
+                }
+                const plusImage = {
+                    width: '30px',
+                    height: '30px',
+                    marginLeft: '20px'
+                }
+                const text = votingData.text;
+                const counter = votingData.count;
+                return (
+                        <div style={row}>
+                            <div style={rowElement}><input style={voteCounter} type="text" name="counter" value={counter}/></div>
+                            <div style={rowElement}>{text}</div>
+                            <div style={rowElement}><button style={voteTally} type="submit" value="submit"><img style={plusImage} src="plus.png"/></button></div>
+                        </div>
+                        )
+            }
+            ReactDOM.render(
+                <Container languageVote={languageVote}/>,
+                document.getElementById('root')
+            )
+        </script>
+</body>
+</html>
+
+
