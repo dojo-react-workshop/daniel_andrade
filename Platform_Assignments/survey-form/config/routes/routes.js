@@ -1,14 +1,26 @@
 module.exports = function Route(app){
 	app.get('/', function(req, res) {
+	 
 	 res.render("index");
 	})
+
 	app.post('/result', function(req, res) {
-		user = {
-			name: req.body.name,
-			dojo_location: req.body.dojo_location,
-			favorite_language: req.body.favorite_language,
-			comment: req.body.comment
-		};
-	 	res.render("results",{data: user});
+		 res.json(req.body);
+		
+		
+		// user = {
+		// 	name: req.body.name,
+		// 	location: req.body.location,
+		// 	language: req.body.language,
+		// 	comment: req.body.comment
+		// }
+
+		// var contextObj = {
+		//  title: "My Survey Form"
+		// 	 }
+
+		// res.render("results", {data: user});
 	})
+		
+	 
 };

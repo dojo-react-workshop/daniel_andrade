@@ -4,9 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Survey Form</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="/js/main.js"></script>
 </head>
 <body>
-	<div id="wrapper">
+	<div id="container">
+
 		<form action="/result" method="post">
 			<div>
 				Your Name: 
@@ -14,7 +17,7 @@
 			</div>
 			<div>
 				Dojo Location: 
-				<select name="dojo_location">
+				<select name="location">
 					<option value="Seattle">Seattle</option>
 					<option value="Milwaukee">Milwaukee</option>
 					<option value="London">London</option>
@@ -23,7 +26,7 @@
 			</div>
 			<div>
 				Favorite Language: 
-				<select name="favorite_language">
+				<select name="language">
 					<option value="Javascript">Javascript</option>
 					<option value="Ruby">Ruby</option>
 					<option value="React">React</option>
@@ -32,10 +35,11 @@
 			</div>
 			<div>
 				Comment (optional):
-				<textarea></textarea>
+				<textarea name="comment"></textarea>
 			</div>
 			<button type="submit" value="Submit">Submit</button>
 		</form>
+	
 	</div>
 </body>
 </html>
